@@ -1,9 +1,13 @@
+// inquirer import
 const inquirer = require('inquirer')
 
+// file system mod import
 const fs = require('fs')
 
+// import class from svgShapes.js
 const {Triangle, Square, Circle} = require('./lib/svgShapes')
 
+// function to write svg file using answers from the user prompts.   
 function writeToFile(fileName, answers) {
     let shapeString = "";
 
@@ -38,7 +42,7 @@ function writeToFile(fileName, answers) {
         err ? console.log(err) : console.log('Generated Logo!!!!')
     })
 }
-
+// function for user prompts the calls writeToFile function
 function userPrompt() {
     inquirer
     .prompt([
